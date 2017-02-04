@@ -5,7 +5,7 @@
  * Author: GoDaddy
  * Author URI: https://www.godaddy.com/
  * Description: Primer is a powerful theme that brings clarity to your content in a fresh design.
- * Version: 1.0.0
+ * Version: 1.4.1
  * License: GPL-2.0
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: primer
@@ -366,7 +366,8 @@ html {
   box-sizing: inherit; }
 
 body {
-  background: #f5f5f5; }
+  background: #f5f5f5;
+  word-wrap: break-word; }
 
 blockquote, q {
   quotes: "" ""; }
@@ -644,8 +645,12 @@ a {
       margin-left: 25px; } }
   .main-navigation li li {
     text-indent: 1rem; }
+    .main-navigation li li a {
+      text-indent: 0; }
   .main-navigation li li li {
     text-indent: 1.5rem; }
+    .main-navigation li li li a {
+      text-indent: 0; }
   .main-navigation ul {
     list-style: none;
     margin: 0;
@@ -1982,6 +1987,10 @@ body.no-max-width .site-info-wrapper .site-info {
   .widget_search .search-submit {
     display: none; }
 
+.hero .widget.widget_text p {
+  font-size: 125%;
+  line-height: 1.4; }
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -2075,6 +2084,9 @@ body.no-max-width .site-info-wrapper .site-info {
 .entry-content,
 .entry-summary {
   margin: 1em 0 0; }
+
+.entry-content {
+  margin-bottom: 1em; }
 
 .entry-footer {
   padding-top: 1em;

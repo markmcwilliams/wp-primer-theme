@@ -229,7 +229,8 @@ class Primer_Customizer_Colors {
 					'section'         => 'colors-footer',
 					'active_callback' => 'primer_has_active_footer_sidebars',
 					'css'             => array(
-						'.site-footer .widget' => array(
+						'.site-footer .widget,
+						.site-footer .widget form label' => array(
 							'color' => '%1$s',
 						),
 					),
@@ -301,7 +302,8 @@ class Primer_Customizer_Colors {
 						a.button, a.button:visited,
 						input[type="button"],
 						input[type="reset"],
-						input[type="submit"]' => array(
+						input[type="submit"],
+						.site-info-wrapper .social-menu a:hover' => array(
 							'background-color' => '%1$s',
 							'border-color'     => '%1$s',
 						),
@@ -1320,6 +1322,25 @@ class Primer_Customizer_Colors {
 
 	}
 
+	/**
+	 * Magic getter for colors and color_schemes property
+	 *
+	 * @param $name
+	 *
+	 * @return bool
+	 */
+	public function __get( $name ) {
+
+		if ( ! in_array( $name, array( 'colors', 'color_schemes' ), true ) ) {
+
+			return false;
+
+		}
+
+		return $this->$name;
+
+	}
+
 }
 
-new Primer_Customizer_Colors;
+$GLOBALS['primer_customizer_colors'] = new Primer_Customizer_Colors;
